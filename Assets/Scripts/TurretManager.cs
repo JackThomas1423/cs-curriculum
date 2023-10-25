@@ -2,10 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Vector2 = System.Numerics.Vector2;
 
 public class TurretManager : MonoBehaviour
 {
-    public GameObject bulletPrefab;
+    public BulletManager bulletPrefab;
     private Collider2D target = null;
     private float og_time = 3;
     private float timer = 0;
@@ -26,7 +27,8 @@ public class TurretManager : MonoBehaviour
                 if (target != null)
                 {
                     timer = og_time;
-                    Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+                    BulletManager p = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+                    p.bulletSpeed = ((target.gameObject.transform.position - transform.position).normalized * 10);
                 }
             }
         }
