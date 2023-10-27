@@ -11,9 +11,4 @@ public class BulletManager : MonoBehaviour
     {
         transform.Translate(bulletSpeed*Time.deltaTime);
     }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        Destroy(gameObject);
-    }
 }
