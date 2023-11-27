@@ -18,6 +18,10 @@ public class CollectCoins : MonoBehaviour
         {
             hud.coins++;
             Destroy(collision.gameObject);
+        } else if(collision.gameObject.CompareTag("Coin2"))
+        {
+            hud.coins += 2;
+            Destroy(collision.gameObject);
         }
     }
 }
