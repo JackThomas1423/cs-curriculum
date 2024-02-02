@@ -12,7 +12,6 @@ public class HUD : MonoBehaviour
     public TextMeshProUGUI healthMesh;
     public int coins = 0;
     public int health = 0;
-    public int maxhealth = 0;
     
     private void Awake()
     {

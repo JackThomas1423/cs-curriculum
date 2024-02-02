@@ -377,7 +377,6 @@ MonoBehaviour:
   healthMesh: {fileID: 801136108}
   coins: 0
   health: 5
-  maxhealth: 0
 --- !u!1 &532849911
 GameObject:
   m_ObjectHideFlags: 0
@@ -3711,10 +3710,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3613895582600187363, guid: cddc0eae8679c4344b7e477729e7843b,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6347154190651817683, guid: cddc0eae8679c4344b7e477729e7843b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7386698514500486556, guid: cddc0eae8679c4344b7e477729e7843b,
         type: 3}
       propertyPath: m_Name
       value: Player_Shovel
+      objectReference: {fileID: 0}
+    - target: {fileID: 7386698514500486556, guid: cddc0eae8679c4344b7e477729e7843b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3732,6 +3746,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1856841598}
+    - targetCorrespondingSourceObject: {fileID: 7386698514500486556, guid: cddc0eae8679c4344b7e477729e7843b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1856841605}
   m_SourcePrefab: {fileID: 100100000, guid: cddc0eae8679c4344b7e477729e7843b, type: 3}
 --- !u!1 &1856841597 stripped
 GameObject:
@@ -3779,6 +3797,19 @@ MonoBehaviour:
   ySpeed: 0
   scene:
     m_Handle: 0
+--- !u!114 &1856841605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856841597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f117ab82b891d45e6accb3cce56f10a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bl: {fileID: 6544119048327520494, guid: d181d0f6b0e116b4298e1e64b89f707e, type: 3}
 --- !u!1 &1984272032
 GameObject:
   m_ObjectHideFlags: 0

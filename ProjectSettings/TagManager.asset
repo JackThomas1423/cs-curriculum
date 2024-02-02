@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - Axe
   - Spikes
+  - Coin2
+  - Ball
   layers:
   - Default
   - TransparentFX

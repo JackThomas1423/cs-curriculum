@@ -39,5 +39,19 @@ public class HealthManger : MonoBehaviour
                 hud.health--;
             }
         }
+
+        if (collision.gameObject.CompareTag("Ball"))
+        {
+            if (!iframes)
+            {
+                BulletManager p = collision.gameObject.GetComponent<BulletManager>();
+                if (p.creator != this.gameObject)
+                {
+                    iframes = true;
+                    hud.health--;
+                    Destroy(collision.gameObject);
+                }
+            }
+        }
     }
 }
