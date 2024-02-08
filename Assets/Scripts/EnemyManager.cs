@@ -13,6 +13,7 @@ public class EnemyManager : MonoBehaviour
     public CircleCollider2D big_cl;
     public GameObject Coin_Drop;
     public GameObject Coin2_Drop;
+    public GameObject axe;
     private GameObject player = null;
     private Animator _animator;
     public int health = 3;
@@ -33,7 +34,7 @@ public class EnemyManager : MonoBehaviour
 
         if (0 >= health)
         {
-            int r = Random.Range(0, 2);
+            int r = Random.Range(0, 3);
             GameObject p;
             switch(r)
             {
@@ -44,6 +45,7 @@ public class EnemyManager : MonoBehaviour
                     p = Instantiate(Coin2_Drop, transform.position, Quaternion.identity);
                     break;
                 case 2:
+                    p = Instantiate(axe, transform.position, Quaternion.identity);
                     break;
             }
             Destroy(gameObject);

@@ -12,6 +12,9 @@ public class HUD : MonoBehaviour
     public TextMeshProUGUI healthMesh;
     public int coins = 0;
     public int health = 0;
+    public bool has_axe = false;
+    public GameObject Door;
+    public bool overworld;
     
     private void Awake()
     {
@@ -23,6 +26,14 @@ public class HUD : MonoBehaviour
         {
             hud = this;
             DontDestroyOnLoad(hud);
+        }
+    }
+
+    void Start()
+    {
+        if (overworld)
+        {
+            Door = GameObject.FindObjectWithTag("WoodDoor");
         }
     }
 

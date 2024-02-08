@@ -14,21 +14,27 @@ public class CaveMovment : MonoBehaviour
     private Collider2D col;
     private Rigidbody2D rd;
     public Scene scene;
+    public TopDown_AnimatorController TDAC;
+    public HUD hud;
+
     void Start()
     {
         xSpeed = 4;
         scene = SceneManager.GetActiveScene();
         if (scene.name == "Overworld")
         {
+            hud.overworld = true;
             ySpeed = 4;
         }
         else
         {
+            hud.overworld = false;
             ySpeed = 0;
         }
 
         col = GetComponent<Collider2D>();
         rd = GetComponent<Rigidbody2D>();
+
     }
     
     void Update()
@@ -38,7 +44,9 @@ public class CaveMovment : MonoBehaviour
         {
             if (Input.GetButton("Jump") && ySpeed == 0)
             {
-                rd.AddForce(new Vector2(0f,10f));
+                float force = 10f;
+                force /= (scene.name == "Platformer") ? 1.5f: 1f;
+                rd.AddForce(new Vector2(0f,force));
             }
         }
         xDirection = Input.GetAxis("Horizontal");
@@ -64,6 +72,16 @@ public class CaveMovment : MonoBehaviour
                     }
                 }
             }
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.CompareTag("Axe"))
+        {
+            hud.has_axe = true;
+            TDAC.SwitchToAxe();
+            Destroy(other.gameObject);
         }
     }
 }
